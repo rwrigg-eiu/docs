@@ -14,6 +14,8 @@ WARNING:
 
 -->
 
+**Note:** this is the "per-architecture" repository for the `amd64` builds of [the `gradle` official image](https://hub.docker.com/_/gradle) -- for more information, see ["Architectures other than amd64?" in the official images documentation](https://github.com/docker-library/official-images#architectures-other-than-amd64) and ["An image's source changed in Git, now what?" in the official images FAQ](https://github.com/docker-library/faq#an-images-source-changed-in-git-now-what).
+
 # Quick reference
 
 -	**Maintained by**:  
@@ -34,6 +36,8 @@ WARNING:
 -	[`6.7.0-jre8-openj9`, `6.7-jre8-openj9`, `jre8-openj9`, `6.7.0-jre-openj9`, `6.7-jre-openj9`, `jre-openj9`](https://github.com/keeganwitt/docker-gradle/blob/8e50459d57c5d88c005efc392c24feea5bafd11f/openj9/jre8/Dockerfile)
 -	[`6.7.0-jdk11-openj9`, `6.7-jdk11-openj9`, `jdk11-openj9`](https://github.com/keeganwitt/docker-gradle/blob/8e50459d57c5d88c005efc392c24feea5bafd11f/openj9/jdk11/Dockerfile)
 -	[`6.7.0-jre11-openj9`, `6.7-jre11-openj9`, `jre11-openj9`](https://github.com/keeganwitt/docker-gradle/blob/8e50459d57c5d88c005efc392c24feea5bafd11f/openj9/jre11/Dockerfile)
+
+[![amd64/gradle build status badge](https://img.shields.io/jenkins/s/https/doi-janky.infosiftr.net/job/multiarch/job/amd64/job/gradle.svg?label=amd64/gradle%20%20build%20job)](https://doi-janky.infosiftr.net/job/multiarch/job/amd64/job/gradle/)
 
 # Quick reference (cont.)
 
@@ -66,7 +70,7 @@ WARNING:
 
 Run this from the directory of the Gradle project you want to build.
 
-`docker run --rm -u gradle -v "$PWD":/home/gradle/project -w /home/gradle/project gradle gradle <gradle-task>`
+`docker run --rm -u gradle -v "$PWD":/home/gradle/project -w /home/gradle/project amd64/gradle gradle <gradle-task>`
 
 Note the above command runs using uid/gid 1000 (user *gradle*) to avoid running as root.
 
